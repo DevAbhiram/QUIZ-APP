@@ -24,10 +24,51 @@ body {
 }
 .container h1 {
     font-size: 2.5rem;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background-clip: text;
+    color: transparent;
 }
-.container ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+.feature-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.icon.red {
+  color: #e74c3c;
+}
+
+.icon.green {
+  color: #27ae60;
+}
+
+.icon.blue {
+  color: #3498db;
+}
+.stbtn  {
+    font-size: 1.2rem;
+    font-weight: 500;
+    height: 3rem;
+    width: 25rem;
+    color: #fff;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
 }
