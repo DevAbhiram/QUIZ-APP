@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <title>QUIZ-APP</title>
 </head>
@@ -25,13 +27,16 @@
     <div id="quiz-section" style="display: none;">
         <div class="question"></div>
         <div class="options">
-            <div class="opt1"></div>
-            <div class="opt2"></div>
-            <div class="opt3"></div>
-            <div class="opt4"></div>
+            <div class="opt opt1"></div>
+            <div class="opt opt2"></div>
+            <div class="opt opt3"></div>
+            <div class="opt opt4"></div>
         </div>
-        <button id="nxt" onclick="nxtqt()">Next</button>
+        <div class="btn-container">
+            <button id="nxt" type="button" class="btn btn-success">Next</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -52,7 +52,7 @@ const quizData = [
 ];
 let score = 0, currindx = 0;
 let stbtn = document.querySelector('.stbtn');
-let options = document.querySelector('.opt');
+let options = document.querySelectorAll('.opt');
 function stquiz() {
     document.querySelector(".container").style.display = "none";
     document.getElementById("quiz-section").style.display = "block";
@@ -61,20 +61,41 @@ function stquiz() {
 function showquestions() {
     const qobj = quizData[currindx];
     document.querySelector('.question').innerText = `Q${currindx + 1}. ${qobj.question}`;
-    document.querySelector('.opt1').innerText = `A${qobj.options[0]}`;
-    document.querySelector('.opt2').innerText = `A${qobj.options[1]}`;
-    document.querySelector('.opt3').innerText = `A${qobj.options[2]}`;
-    document.querySelector('.opt4').innerText = `A${qobj.options[3]}`;
+    document.querySelector('.opt1').innerText = `A) ${qobj.options[0]}`;
+    document.querySelector('.opt2').innerText = `B) ${qobj.options[1]}`;
+    document.querySelector('.opt3').innerText = `C) ${qobj.options[2]}`;
+    document.querySelector('.opt4').innerText = `D) ${qobj.options[3]}`;
+    document.querySelectorAll('.opt').forEach(opt => {
+        opt.classList.remove('selected');
+        opt.style.backgroundColor = '#f9f9f9';
+    });
 }
-opt.addEventListener('click', () => {
-    const qobj = quizData[currindx];
-    if (opt.value === qobj.answer) {
-        score += 1;
-    }
-}
-
+options.forEach(opt => {
+    opt.addEventListener('click', () => {
+        options.forEach(o => {
+            o.style.backgroundColor = '#f9f9f9';
+            o.classList.remove('selected');
+        });
+        opt.style.backgroundColor = '#dff0d8';
+        opt.classList.add('selected');
+    });
+});
 let nextbtn = document.querySelector('#nxt');
 nextbtn.addEventListener('click', () => {
-    curr++;
-    showquestions();
-}
+    const selectedOption = document.querySelector('.opt.selected');
+    if (!selectedOption) {
+        alert("Please select an option before moving to the next question.");
+        return;
+    }
+    const userAnswer = selectedOption.innerText.split(") ")[1];
+    const correctAnswer = quizData[currindx].answer;
+    if (userAnswer === correctAnswer) {
+        score++;
+    }
+    currindx++;
+    if (currindx < quizData.length) {
+        showquestions();
+    } else {
+        alert(`Quiz finished! Your score is ${score}/${quizData.length}`);
+    }
+});
