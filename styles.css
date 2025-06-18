@@ -8,7 +8,6 @@ body {
     background: linear-gradient(to right, #6a11cb, #2575fc);
 }
 .container {
-    display: none;
     height: 50%;
     width: 60%;
     border-radius: 12px;
