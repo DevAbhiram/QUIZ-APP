@@ -8,6 +8,7 @@ body {
     background: linear-gradient(to right, #6a11cb, #2575fc);
 }
 .container {
+    display: none;
     height: 50%;
     width: 60%;
     border-radius: 12px;
@@ -77,4 +78,19 @@ body {
 .stbtn:hover {
     transform: translateY(-6px) scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+.quiz-section {
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 80px;
+    z-index: 1;
+}
+.quiz-section .question {
+    font-size: 12px;
+    border: 1px solid black;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 8px;
 }
