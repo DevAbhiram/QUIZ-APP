@@ -95,7 +95,15 @@ nextbtn.addEventListener('click', () => {
     currindx++;
     if (currindx < quizData.length) {
         showquestions();
+        if (currindx === quizData.length - 1) {
+            nextbtn.innerText = "Submit";
+        }
     } else {
         alert(`Quiz finished! Your score is ${score}/${quizData.length}`);
+         currindx = 0;
+        score = 0;
+        nextbtn.innerText = "Next";
+        document.querySelector(".container").style.display = "block";
+        document.getElementById("quiz-section").style.display = "none";
     }
 });
