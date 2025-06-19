@@ -50,17 +50,14 @@ const quizData = [
         answer: "nulltest"
     }
 ];
-
 let score = 0, currindx = 0;
 let timer, timeLeft = 45;
 let nextbtn = document.querySelector('#nxt');
-
 function stquiz() {
     document.querySelector(".container").style.display = "none";
     document.getElementById("quiz-section").style.display = "block";
     showquestions();
 }
-
 function startTimer() {
     timeLeft = 45;
     document.getElementById('timer').innerText = `0:${timeLeft < 10 ? '0' + timeLeft : timeLeft}`;
@@ -73,7 +70,6 @@ function startTimer() {
         }
     }, 1000);
 }
-
 function showquestions() {
     clearInterval(timer);
     startTimer();
@@ -83,7 +79,6 @@ function showquestions() {
     document.querySelector('.opt2').innerText = `B) ${qobj.options[1]}`;
     document.querySelector('.opt3').innerText = `C) ${qobj.options[2]}`;
     document.querySelector('.opt4').innerText = `D) ${qobj.options[3]}`;
-
     const allOptions = document.querySelectorAll('.opt');
     allOptions.forEach(opt => {
         opt.classList.remove('selected');
