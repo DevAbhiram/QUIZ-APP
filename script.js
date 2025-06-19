@@ -100,7 +100,6 @@ function showquestions() {
         };
     });
 }
-
 nextbtn.addEventListener('click', () => {
     const selectedOption = document.querySelector('.opt.selected');
     if (!selectedOption) {
@@ -124,7 +123,6 @@ nextbtn.addEventListener('click', () => {
         resetQuiz();
     }
 });
-
 function autoNext() {
     const selectedOption = document.querySelector('.opt.selected');
     const userAnswer = selectedOption ? selectedOption.innerText.split(") ")[1] : null;
@@ -132,7 +130,6 @@ function autoNext() {
     if (userAnswer === correctAnswer) {
         score++;
     }
-
     currindx++;
     if (currindx < quizData.length) {
         showquestions();
