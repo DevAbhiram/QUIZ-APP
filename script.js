@@ -141,7 +141,6 @@ function autoNext() {
         resetQuiz();
     }
 }
-
 function resetQuiz() {
     currindx = 0;
     score = 0;
